@@ -1,0 +1,51 @@
+---
+import Section from "../layouts/Section.astro";
+
+import nowplaying from "../assets/nowplaying.html";
+---
+
+<Section needsScript>
+    <div class="container">
+        <p>what the mouse listening to !?</p>
+        <p>
+            <small>(it shows whatever i'm listening to on my computer!!!)</small
+            >
+        </p>
+
+        <div id="nowplaying-container" hidden>
+            <Fragment set:html={nowplaying({ slots: undefined })} />
+        </div>
+    </div>
+</Section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const e = document.getElementById("nowplaying-container")!;
+        e.attachShadow({ mode: "open" });
+        e.shadowRoot?.replaceChildren(...e.childNodes);
+        e.hidden = false;
+    });
+</script>
+
+<style>
+    #nowplaying-container {
+        width: 400px;
+        height: 200px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min-content;
+        margin-inline: auto;
+    }
+
+    .container p {
+        width: fit-content;
+    }
+
+    iframe {
+        border: none;
+    }
+</style>

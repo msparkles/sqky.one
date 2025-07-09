@@ -1,0 +1,32 @@
+---
+import ColorCards from "../components/ColorCards.astro";
+import Nowplaying from "../components/Nowplaying.astro";
+import Profile from "../components/Profile.astro";
+import Page from "../layouts/Page.astro";
+---
+
+<Page>
+    <Profile />
+    <div class="group">
+        <ColorCards />
+        <Nowplaying />
+    </div>
+</Page>
+
+<style>
+    .group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: stretch;
+        align-items: first baseline;
+
+        gap: 2rem;
+    }
+
+    .group > :global(*) {
+        flex: min-content;
+        width: fit-content;
+    }
+</style>

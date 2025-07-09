@@ -1,0 +1,322 @@
+---
+import { Picture } from "astro:assets";
+import Section, { sectionColors } from "../layouts/Section.astro";
+import Headmates from "./Headmates.astro";
+
+import profilePicture from "../assets/profile_picture.png";
+
+const pfpDesc =
+    "The mouse in Resonite, it has a pacifier in colours of the transgender flag in its mouth, it is facing the viewer and smiling with wide-open eyes.";
+---
+
+<Section>
+    <p class="hiiiii" aria-label="hiiii">
+        <strong aria-hidden="true">
+            hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        </strong>
+    </p>
+
+    <figure class="pfp-container">
+        <div class="pfp">
+            <span aria-hidden="true" class="ear-left"></span>
+            <span aria-hidden="true" class="ear-right"></span>
+
+            <Picture
+                src={profilePicture}
+                class="pfp-image"
+                quality="max"
+                formats={["webp", "avif", "png", "jpeg"]}
+                alt={pfpDesc}
+                title={pfpDesc}
+            />
+        </div>
+
+        <figcaption class="pfp-caption">
+            <p>the mouse!!!!!! 🐁</p>
+            <p>picture taken on <a href="https://resonite.com/">Resonite</a></p>
+            <p>
+                <small>
+                    (better picture incoming, i've been ADHDing about this for
+                    months)
+                </small>
+            </p>
+        </figcaption>
+    </figure>
+
+    <br />
+
+    <div class="profile-content">
+        <div>
+            <p>
+                welcome to my site!!!!! this is the
+                <a href="https://sqky.one/"><code>sqky.one</code></a>
+                squeaking to you.
+            </p>
+            <p>it means "Squeaky One"!!!!</p>
+
+            <br />
+
+            <p>i'm a <em>mouse</em> 🐁!!!!</p>
+            <p>
+                and mice are squeaky, so i'm
+                <a href="https://the.sqky.one/"><code>the.sqky.one</code></a>
+                !!!!!
+            </p>
+
+            <h2>who r u though</h2>
+            <p>
+                you can call me any of these names!!! (they are all equally
+                valid)
+            </p>
+            <ul>
+                <li>Stella</li>
+                <li>twinkle <small>(lowercase only!)</small></li>
+                <li>Mei</li>
+                <li>mouse</li>
+            </ul>
+        </div>
+
+        <hr />
+
+        <div>
+            <h2>By The Way, There's More</h2>
+            <p>we're plural!!!!!!!</p>
+            <p>
+                if referring to us collectively, call us
+                <em>Madeline</em> or <em>Maddie</em>
+                (<code>they/them</code>)
+            </p>
+
+            <br />
+
+            <p>
+                here is a
+                <small>(hopefully up-to-date when you read this)</small>
+                list of the headmates (:
+            </p>
+            <p>
+                <small>
+                    <strong>
+                        (note: we might add pages for specific headmates
+                        later!!!!!)
+                    </strong>
+                </small>
+            </p>
+
+            <Headmates />
+        </div>
+
+        <hr />
+
+        <div>
+            <h2>what art thee</h2>
+            <p>
+                there's a lot of things i could be... here's a list of ideas for
+                me
+            </p>
+            <p>
+                <small>
+                    (this list is ever-growing. we have BPD
+                    <small>(Borderline Personality Disorder)</small>
+                    and my identity is as fragmented as my HDD)
+                </small>
+            </p>
+            <ul>
+                <li>Mouse (mouse (mouse))</li>
+                <li>
+                    Computer mouse (but also animal mouse (also has RGB gamer
+                    lighting))
+                </li>
+                <li>Marshmallow mouse (you will be TF'd if you eat me)</li>
+                <li>
+                    Deer mouse (like a deer if it was small and squeaky and also
+                    mouse)
+                </li>
+                <li>
+                    Mouse girl (girl (young (did you know i'm an age
+                    regressor)))
+                </li>
+                <li>Mouse Woman (Grown Up (This is Getting Silly))</li>
+                <li></li>
+            </ul>
+        </div>
+
+        <hr />
+
+        <div>
+            <h2>words of honour</h2>
+            <p>here u can find some stuff people have said about me :3</p>
+            <blockquote>
+                not much is known about this creature, only a collection of
+                names and some nesting behaviours...
+            </blockquote>
+            <cite>anonymous deer</cite>
+            <blockquote>evil therapist</blockquote>
+            <cite>anonymous puppy</cite>
+        </div>
+    </div>
+</Section>
+
+<style
+    define:vars={{
+        ...sectionColors,
+    }}
+>
+    @keyframes earwiggleleft {
+        from {
+            rotate: -45deg;
+        }
+        to {
+            rotate: -70deg;
+        }
+    }
+
+    @keyframes earwiggleright {
+        from {
+            rotate: 45deg;
+        }
+        to {
+            rotate: 70deg;
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            rotate: 0deg;
+        }
+
+        to {
+            rotate: 360deg;
+        }
+    }
+
+    @keyframes bounce {
+        from {
+            translate: 0 0;
+        }
+
+        to {
+            translate: 0 -7.5%;
+        }
+    }
+
+    .hiiiii {
+        width: 100%;
+        overflow: clip;
+    }
+
+    .profile-content {
+        text-wrap-style: balance;
+        clear: left;
+    }
+
+    .pfp-container {
+        width: min-content;
+
+        padding: 2rem;
+
+        text-align: center;
+
+        float: right;
+    }
+
+    @media (max-width: 580px) {
+        .pfp-container {
+            width: 100%;
+        }
+    }
+
+    .pfp {
+        position: relative;
+
+        width: 192px;
+
+        margin-inline: auto;
+        margin-bottom: 1.85rem;
+
+        animation: bounce 0.45s infinite ease-out alternate;
+    }
+
+    .pfp-caption {
+        display: block;
+        width: fit-content;
+        text-wrap: wrap;
+
+        margin-inline: auto;
+    }
+
+    .pfp-image {
+        display: block;
+        user-select: none;
+        touch-action: none;
+
+        cursor: pointer;
+        background-color: var(--bgColor);
+        color: transparent;
+
+        width: 100%;
+        height: auto;
+
+        border-radius: 9999px;
+    }
+
+    .ear-left,
+    .ear-right {
+        --distance-x: -5%;
+        --distance-y: 8%;
+
+        z-index: -1;
+        display: block;
+
+        width: 32%;
+        height: 46%;
+        position: absolute;
+
+        background: #f098bd;
+        border-radius: 9999px;
+
+        box-sizing: border-box;
+        border: #ffffff solid 12px;
+
+        animation-duration: 0.07s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+        animation-direction: alternate-reverse;
+    }
+
+    .ear-left {
+        left: var(--distance-x);
+        top: var(--distance-y);
+
+        animation-name: earwiggleleft;
+    }
+
+    .ear-right {
+        right: var(--distance-x);
+        top: var(--distance-y);
+
+        animation-name: earwiggleright;
+    }
+</style>
+
+<script>
+    const url = "/squeak.ogg";
+
+    const context = new AudioContext({ latencyHint: "interactive" });
+    const audioBuffer = await fetch(url)
+        .then((res) => res.arrayBuffer())
+        .then((ArrayBuffer) => context.decodeAudioData(ArrayBuffer));
+
+    document.querySelectorAll(".pfp-image").forEach((image) => {
+        image.addEventListener("click", () => {
+            const source = context.createBufferSource();
+            source.buffer = audioBuffer;
+            source.onended = () => {
+                source.disconnect();
+            };
+
+            source.connect(context.destination);
+            source.start();
+        });
+    });
+</script>

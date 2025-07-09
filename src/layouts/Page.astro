@@ -1,0 +1,342 @@
+---
+import { semanticColors } from "../colors.astro";
+
+const siteName = "squeaky one";
+
+const description = `it's Squeaking, chewing Ur Cables,
+Breaking your Software, while Making Out with all the cuties`;
+
+function getTitle(pageName: string | undefined) {
+    if (!pageName) {
+        return `!!! ${siteName} !!!`;
+    }
+
+    return `${siteName} - ${pageName}`;
+}
+
+const title = getTitle(Astro.props.title);
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="theme-color" content="#ffc2fe" />
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon_16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon_32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="48x48"
+            href="/favicon_48.png"
+        />
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon_152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon_180.png" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/favicon_192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="/favicon_512.png"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <meta property="og:title" content={title} />
+        <meta
+            property="og:image"
+            content="https://sqky.one/assets/thumbnail.png"
+        />
+        <meta property="og:url" content="https://sqky.one" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={description} />
+
+        <meta name="generator" content={Astro.generator} />
+
+        <link rel="stylesheet" href="/reset.css" />
+
+        <link rel="stylesheet" href="/fonts/IosevkaAile/IosevkaAile.css" />
+        <link
+            rel="stylesheet"
+            href="/fonts/IosevkaCurlySlab/IosevkaCurlySlab.css"
+        />
+        <link rel="stylesheet" href="/fonts/IosevkaEtoile/IosevkaEtoile.css" />
+    </head>
+
+    <body>
+        <main>
+            <slot />
+        </main>
+
+        <div id="popout-fakeroot"></div>
+    </body>
+</html>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        padding-inline: calc(max(14vw - 800px * 0.1, 0px));
+        padding-inline: calc(160 * max(100vw - 800px, 0px) / 800);
+
+        padding-block: 1.5rem;
+        gap: 2rem;
+    }
+</style>
+
+<noscript>
+    <style is:global>
+        .noscript {
+            display: none;
+        }
+    </style>
+</noscript>
+
+<style define:vars={{ ...semanticColors }} is:global>
+    :root {
+        --sans: "Iosevka Aile Web", sans-serif;
+        --mono: "Iosevka Curly Slab Web", monospace;
+        --serif: "Iosevka Etoile Web", serif;
+
+        font-family: var(--sans);
+
+        color: var(--textColor);
+        background-color: var(--bgColor);
+    }
+
+    html,
+    body {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .sans {
+        font-family: var(--sans);
+    }
+
+    .serif {
+        font-family: var(--serif);
+    }
+
+    .mono {
+        font-family: var(--mono);
+    }
+
+    body {
+        position: relative;
+    }
+
+    #popout-fakeroot {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        padding: 0;
+        margin: 0;
+
+        overflow: hidden;
+        user-select: none;
+        touch-action: none;
+        pointer-events: none;
+
+        text-rendering: optimizeLegibility;
+    }
+
+    #popout-fakeroot * {
+        pointer-events: auto;
+
+        text-rendering: optimizeLegibility;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--serif);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--headingColor);
+
+        margin-block: 0.25em;
+    }
+
+    h1::before,
+    h2::before,
+    h3::before,
+    h4::before,
+    h5::before,
+    h6::before {
+        content: "# ";
+    }
+
+    h1 {
+        font-size: 2.1em;
+    }
+
+    h2 {
+        font-size: 1.9em;
+    }
+
+    h3 {
+        font-size: 1.85em;
+    }
+
+    h4 {
+        font-size: 1.7em;
+    }
+
+    h5 {
+        font-size: 1.55em;
+    }
+
+    h6 {
+        font-size: 1.35em;
+    }
+
+    hr {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: var(--separatorColor);
+        margin-block: 2.25em;
+        border-radius: 9999px;
+        overflow: hidden;
+    }
+
+    p {
+        margin-block: 0.5em;
+    }
+
+    code {
+        font-size: 0.875em;
+        display: inline;
+        padding-inline: 0.15em;
+        border-radius: 0.25rem;
+        border: 1px solid var(--codeBorderColor);
+        background-color: var(--codeBgColor);
+    }
+
+    code {
+        font-family: var(--mono);
+    }
+
+    a,
+    a:visited {
+        color: var(--linkColor);
+        text-decoration: underline;
+    }
+
+    b,
+    strong {
+        font-weight: bold;
+    }
+
+    strong {
+        color: var(--strongColor);
+    }
+
+    em {
+        color: var(--emColor);
+    }
+
+    i,
+    em {
+        font-style: italic;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol,
+    ul {
+        padding-left: 1em;
+    }
+
+    li {
+        color: var(--emColor);
+    }
+
+    small {
+        font-size: 0.8em;
+        color: var(--smallColor);
+    }
+
+    blockquote {
+        margin-block: 1.25rem;
+        margin-left: 1rem;
+        padding-left: 0.75rem;
+        border-radius: 0.35rem;
+        border-left: solid var(--quoteColor) 4px;
+
+        font-style: italic;
+    }
+
+    blockquote::before {
+        content: "\201C";
+    }
+
+    blockquote::after {
+        content: "\201D";
+    }
+
+    cite {
+        display: block;
+        margin-top: -1rem;
+        margin-left: 2.75rem;
+
+        color: var(--citeColor);
+        font-weight: 600;
+        font-style: italic;
+    }
+
+    cite::before {
+        content: "— ";
+    }
+
+    cite::after {
+        content: "";
+    }
+</style>
