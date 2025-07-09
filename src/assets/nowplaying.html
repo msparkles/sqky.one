@@ -142,10 +142,24 @@
                 let title = metadata?.title;
                 if (!title) {
                     title = "Nothing playing!";
+                } else {
+                    title = `“${title}”`;
                 }
 
-                const artist = metadata?.artist ?? "";
-                const album = metadata?.album ?? "";
+                let album = metadata?.album;
+                if (!album) {
+                    album = "";
+                } else {
+                    album = `on ‘${album}’`;
+                }
+
+                let artist = metadata?.artist;
+                if (!artist) {
+                    artist = "";
+                } else {
+                    artist = `by ${artist}`;
+                }
+
                 const art = metadata?.artwork?.at(0) ?? "";
                 const length = metadata?.length;
 
@@ -291,11 +305,6 @@
                 margin-right: 8px;
             }
 
-            #np-text {
-                text-align: center;
-                height: 100%;
-            }
-
             #np-bar {
                 width: 100%;
                 padding-top: 2px;
@@ -334,6 +343,42 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
+
+            #np-text {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                text-align: center;
+            }
+
+            #np-title {
+                margin-block: 0;
+                flex: 1;
+                font-weight: 900;
+
+                color: var(--babypink400);
+            }
+
+            #np-album {
+                margin-block: 0;
+                font-size: 0.75em;
+                font-weight: 600;
+            }
+
+            #np-artist {
+                margin-bottom: 0;
+                margin-top: 0.75rem;
+                font-weight: 700;
+
+                color: var(--lavender400);
+            }
+
+            #np-position {
+                text-align: end;
+                font-size: 0.7em;
+
+                color: var(--slate300);
+            }
         </style>
         <title>MPRIS Now-playing</title>
     </head>
@@ -342,7 +387,7 @@
             <div id="np-info">
                 <div id="np-text">
                     <h4 id="np-title"></h4>
-                    <i id="np-album"></i>
+                    <p id="np-album"></p>
                     <p id="np-artist"></p>
                 </div>
                 <div id="np-status" hidden>

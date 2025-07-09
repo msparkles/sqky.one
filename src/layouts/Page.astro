@@ -1,5 +1,13 @@
 ---
-import { semanticColors } from "../colors.astro";
+import {
+    babypink,
+    cuteblue,
+    grass,
+    lavender,
+    semanticColors,
+    slate,
+    space,
+} from "../colors.astro";
 
 const siteName = "squeaky one";
 
@@ -115,7 +123,18 @@ const title = getTitle(Astro.props.title);
     </style>
 </noscript>
 
-<style define:vars={{ ...semanticColors }} is:global>
+<style
+    define:vars={{
+        ...babypink,
+        ...cuteblue,
+        ...lavender,
+        ...space,
+        ...grass,
+        ...slate,
+        ...semanticColors,
+    }}
+    is:global
+>
     :root {
         --sans: "Iosevka Aile Web", sans-serif;
         --mono: "Iosevka Curly Slab Web", monospace;
@@ -315,11 +334,11 @@ const title = getTitle(Astro.props.title);
     }
 
     blockquote::before {
-        content: "\201C";
+        content: "\00201C\ ";
     }
 
     blockquote::after {
-        content: "\201D";
+        content: "\ \00201D";
     }
 
     cite {
@@ -333,7 +352,7 @@ const title = getTitle(Astro.props.title);
     }
 
     cite::before {
-        content: "— ";
+        content: "\002014\ ";
     }
 
     cite::after {
