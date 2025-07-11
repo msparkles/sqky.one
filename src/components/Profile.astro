@@ -1,85 +1,80 @@
 ---
-import { Picture } from "astro:assets";
-import Section, { sectionColors } from "../layouts/Section.astro";
-import Headmates from "./Headmates.astro";
+import {
+    ESFlag,
+    MouseSide,
+    TFHazard,
+    ThetaDelta,
+    TransFlag,
+} from "../assets/Icons.astro";
 
-import profilePicture from "../assets/profile_picture.png";
+import Icon from "../components/Icon.astro";
+import Headmates from "../components/Headmates.astro";
+import ProfilePicture from "../components/ProfilePicture.astro";
 
-const pfpDesc =
-    "The mouse in Resonite, it has a pacifier in colours of the transgender flag in its mouth, it is facing the viewer and smiling with wide-open eyes.";
+import Section from "../layouts/Section.astro";
 ---
 
 <Section>
+    <style>
+        .hiiiii {
+            width: 100%;
+            overflow: clip;
+        }
+
+        .profile-intro {
+            padding-block: 1.5rem;
+
+            clear: right;
+        }
+    </style>
+
     <p class="hiiiii" aria-label="hiiii">
         <strong aria-hidden="true">
             hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
         </strong>
     </p>
 
-    <figure class="pfp-container">
-        <div class="pfp">
-            <span aria-hidden="true" class="ear-left"></span>
-            <span aria-hidden="true" class="ear-right"></span>
+    <ProfilePicture />
 
-            <Picture
-                src={profilePicture}
-                class="pfp-image"
-                quality="max"
-                formats={["webp", "avif", "png", "jpeg"]}
-                alt={pfpDesc}
-                title={pfpDesc}
-            />
-        </div>
+    <div class="profile-intro">
+        <p>
+            welcome to my site!!!!! this is the
+            <a href="https://sqky.one/"><code>sqky.one</code></a>
+            squeaking to you.
+        </p>
+        <p>it means "Squeaky One"!!!!</p>
 
-        <figcaption class="pfp-caption">
-            <p>the mouse!!!!!! 🐁</p>
-            <p>picture taken on <a href="https://resonite.com/">Resonite</a></p>
-            <p>
-                <small>
-                    (better picture incoming, i've been ADHDing about this for
-                    months)
-                </small>
-            </p>
-        </figcaption>
-    </figure>
+        <br />
 
-    <br />
+        <p>i'm a <em>mouse</em> <Icon src={MouseSide} />!!!!</p>
+        <p>
+            and mice are squeaky, so i'm
+            <a href="https://the.sqky.one/"><code>the.sqky.one</code></a>
+            !!!!!
+        </p>
+
+        <br />
+
+        <h2>who r u though</h2>
+        <p>
+            you can call me any of these names!!! (they are all equally valid)
+        </p>
+        <ul>
+            <li>Stella</li>
+            <li>twinkle <small>(lowercase only!)</small></li>
+            <li>Mei</li>
+            <li>mouse</li>
+        </ul>
+
+        <p>and my pronouns are <code>mouse/it/they</code>!!!</p>
+    </div>
+
+    <hr />
 
     <div class="profile-content">
         <div>
-            <p>
-                welcome to my site!!!!! this is the
-                <a href="https://sqky.one/"><code>sqky.one</code></a>
-                squeaking to you.
-            </p>
-            <p>it means "Squeaky One"!!!!</p>
-
-            <br />
-
-            <p>i'm a <em>mouse</em> 🐁!!!!</p>
-            <p>
-                and mice are squeaky, so i'm
-                <a href="https://the.sqky.one/"><code>the.sqky.one</code></a>
-                !!!!!
-            </p>
-
-            <h2>who r u though</h2>
-            <p>
-                you can call me any of these names!!! (they are all equally
-                valid)
-            </p>
-            <ul>
-                <li>Stella</li>
-                <li>twinkle <small>(lowercase only!)</small></li>
-                <li>Mei</li>
-                <li>mouse</li>
-            </ul>
-        </div>
-
-        <hr />
-
-        <div>
             <h2>By The Way, There's More</h2>
+
             <p>we're plural!!!!!!!</p>
             <p>
                 if referring to us collectively, call us
@@ -104,6 +99,106 @@ const pfpDesc =
             </p>
 
             <Headmates />
+
+            <br />
+
+            <h3>Some Assorted Facts</h3>
+
+            <p>
+                we're
+                <span>
+                    <i class="transgender">transgender</i>
+                    <Icon src={TransFlag} />
+                </span>
+                !!! and also
+                <span>
+                    <i class="nonbinary">nonbinary</i>
+                </span>
+                !!!!!
+            </p>
+            <p>we're also on the <i class="aroace">aroace spectrum</i>!!!!!!</p>
+
+            <style>
+                .transgender,
+                .nonbinary,
+                .aroace {
+                    background-clip: text;
+                    color: #ffffff80;
+                }
+
+                .transgender {
+                    background-image: linear-gradient(
+                        -45deg,
+                        #5ccefa,
+                        #5ccefa 20%,
+                        #f6a8b7 20%,
+                        #f6a8b7 40%,
+                        #fff 40%,
+                        #fff 60%,
+                        #f6a8b7 60%,
+                        #f6a8b7 80%,
+                        #5ccefa 80%,
+                        #5ccefa
+                    );
+                }
+
+                .nonbinary {
+                    background-image: linear-gradient(
+                        -45deg,
+                        #fdf52f,
+                        #fdf52f 25%,
+                        #fff 25%,
+                        #fff 50%,
+                        #9d5ad2 50%,
+                        #9d5ad2 75%,
+                        #000 75%,
+                        #000
+                    );
+                }
+
+                .aroace {
+                    background-image: linear-gradient(
+                        -45deg,
+                        #e38c01,
+                        #e38c01 20%,
+                        #eccd00 20%,
+                        #eccd00 40%,
+                        #fff 40%,
+                        #fff 60%,
+                        #62afde 60%,
+                        #62afde 80%,
+                        #203857 80%,
+                        #203857
+                    );
+                }
+            </style>
+
+            <br />
+
+            <p>
+                We live in <em>España</em>
+                <Icon src={ESFlag} />!!!
+                <mark>
+                    <strong>Puta Renfe</strong>!!!!
+                </mark>
+            </p>
+
+            <p>
+                We're Therian <Icon src={ThetaDelta} />!!!!
+                <small>
+                    (i dont know a good source of info on what this means, if
+                    you know a site lmk please)
+                </small>
+            </p>
+
+            <p>
+                We're a
+                <a href="https://yaodema.com/tf-hazard/" target="_blank"
+                    >TF Hazard</a
+                >
+                <Icon src={TFHazard} />
+                !!!!!
+            </p>
         </div>
 
         <hr />
@@ -156,167 +251,3 @@ const pfpDesc =
         </div>
     </div>
 </Section>
-
-<style
-    define:vars={{
-        ...sectionColors,
-    }}
->
-    @keyframes earwiggleleft {
-        from {
-            rotate: -45deg;
-        }
-        to {
-            rotate: -70deg;
-        }
-    }
-
-    @keyframes earwiggleright {
-        from {
-            rotate: 45deg;
-        }
-        to {
-            rotate: 70deg;
-        }
-    }
-
-    @keyframes rotate {
-        from {
-            rotate: 0deg;
-        }
-
-        to {
-            rotate: 360deg;
-        }
-    }
-
-    @keyframes bounce {
-        from {
-            translate: 0 0;
-        }
-
-        to {
-            translate: 0 -7.5%;
-        }
-    }
-
-    .hiiiii {
-        width: 100%;
-        overflow: clip;
-    }
-
-    .profile-content {
-        text-wrap-style: balance;
-        clear: left;
-    }
-
-    .pfp-container {
-        width: min-content;
-
-        padding: 2rem;
-
-        text-align: center;
-
-        float: right;
-    }
-
-    @media (max-width: 580px) {
-        .pfp-container {
-            width: 100%;
-        }
-    }
-
-    .pfp {
-        position: relative;
-
-        width: 192px;
-
-        margin-inline: auto;
-        margin-bottom: 1.85rem;
-
-        animation: bounce 0.45s infinite ease-out alternate;
-    }
-
-    .pfp-caption {
-        display: block;
-        width: fit-content;
-        text-wrap: wrap;
-
-        margin-inline: auto;
-    }
-
-    .pfp-image {
-        display: block;
-        user-select: none;
-        touch-action: none;
-
-        cursor: pointer;
-        background-color: var(--bgColor);
-        color: transparent;
-
-        width: 100%;
-        height: auto;
-
-        border-radius: 9999px;
-    }
-
-    .ear-left,
-    .ear-right {
-        --distance-x: -5%;
-        --distance-y: 8%;
-
-        z-index: -1;
-        display: block;
-
-        width: 32%;
-        height: 46%;
-        position: absolute;
-
-        background: #f098bd;
-        border-radius: 9999px;
-
-        box-sizing: border-box;
-        border: #ffffff solid 12px;
-
-        animation-duration: 0.07s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in;
-        animation-direction: alternate-reverse;
-    }
-
-    .ear-left {
-        left: var(--distance-x);
-        top: var(--distance-y);
-
-        animation-name: earwiggleleft;
-    }
-
-    .ear-right {
-        right: var(--distance-x);
-        top: var(--distance-y);
-
-        animation-name: earwiggleright;
-    }
-</style>
-
-<script>
-    const url = "/squeak.ogg";
-
-    const context = new AudioContext({ latencyHint: "interactive" });
-    const audioBuffer = await fetch(url)
-        .then((res) => res.arrayBuffer())
-        .then((ArrayBuffer) => context.decodeAudioData(ArrayBuffer));
-
-    document.querySelectorAll(".pfp-image").forEach((image) => {
-        image.addEventListener("click", () => {
-            const source = context.createBufferSource();
-            source.buffer = audioBuffer;
-            source.onended = () => {
-                source.disconnect();
-            };
-
-            source.connect(context.destination);
-            source.start();
-        });
-    });
-</script>
