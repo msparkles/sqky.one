@@ -145,22 +145,26 @@ const contrastColor = ((color: Color) => {
                     curr.currentVel[0] = x.velocity;
                     curr.currentVel[1] = y.velocity;
 
+                    let rotate = "0deg";
+                    let scale = "1";
                     if (curr.lastVel !== null) {
                         const deltaVel = [
                             curr.currentVel[0] - curr.lastVel[0],
                             curr.currentVel[1] - curr.lastVel[1],
                         ];
 
-                        curr.draggingElement.style.scale = `${
+                        scale = `${
                             Math.sqrt(Math.abs(deltaVel[0] + deltaVel[1])) /
                                 60.0 +
                             1.0
                         }`;
-                        curr.draggingElement.style.rotate = `${Math.max(Math.min(360.0, deltaVel[0] / 8.0), -360.0)}deg`;
+                        rotate = `${Math.max(Math.min(360.0, deltaVel[0] / 8.0), -360.0)}deg`;
                     }
                     curr.lastVel = [...curr.currentVel];
 
-                    curr.draggingElement.style.translate = `${curr.currentPos[0] - curr.initialPos[0]}px ${curr.currentPos[1] - curr.initialPos[1]}px`;
+                    const translate = `${curr.currentPos[0] - curr.initialPos[0]}px, ${curr.currentPos[1] - curr.initialPos[1]}px`;
+
+                    curr.draggingElement.style.transform = `translate(${translate}) scale(${scale}) rotate(${rotate})`;
                 }
 
                 curr.lastTime = time;
