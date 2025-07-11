@@ -1,7 +1,7 @@
 ---
-import Section from "../layouts/Section.astro";
-
 import nowplaying from "../assets/nowplaying.html";
+
+import Section from "../layouts/Section.astro";
 ---
 
 <Section needsJs>
@@ -13,25 +13,39 @@ import nowplaying from "../assets/nowplaying.html";
             </small>
         </p>
 
-        <div id="nowplaying-container">
-            <Fragment hidden set:html={nowplaying({ slots: undefined })} />
-        </div>
+        <div id="nowplaying-widget-container"></div>
+        <div id="nowplaying-widget" hidden set:html={nowplaying({})} />
     </div>
 </Section>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const e = document.getElementById("nowplaying-container")!;
-        e.attachShadow({ mode: "open" });
-        e.shadowRoot?.replaceChildren(...e.childNodes);
-        [...e.children].forEach((e) => {
-            (e as HTMLElement).hidden = false;
-        });
+        const container = document.getElementById(
+            "nowplaying-widget-container",
+        )!;
+        const nowplayingWidget = document.getElementById("nowplaying-widget")!;
+
+        container.attachShadow({ mode: "open" });
+
+        if (container.shadowRoot) {
+            container.shadowRoot.replaceChildren(
+                ...nowplayingWidget.childNodes,
+            );
+
+            nowplayingWidget.remove();
+        }
     });
 </script>
 
 <style>
-    #nowplaying-container {
+    #nowplaying-widget {
+        width: 0;
+        height: 0;
+        display: none;
+        visibility: hidden;
+    }
+
+    #nowplaying-widget-container {
         margin-top: 1rem;
         width: 400px;
         height: 200px;
