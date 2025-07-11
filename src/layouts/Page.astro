@@ -97,6 +97,18 @@ const title = getTitle(Astro.props.title);
         </main>
 
         <div id="popout-fakeroot"></div>
+
+        <noscript>
+            <style>
+                .js-interactive {
+                    cursor: unset;
+                }
+
+                .js-necessary {
+                    display: none;
+                }
+            </style>
+        </noscript>
     </body>
 </html>
 
@@ -113,14 +125,6 @@ const title = getTitle(Astro.props.title);
         gap: 2rem;
     }
 </style>
-
-<noscript>
-    <style is:global>
-        .noscript {
-            display: none;
-        }
-    </style>
-</noscript>
 
 <style
     define:vars={{
