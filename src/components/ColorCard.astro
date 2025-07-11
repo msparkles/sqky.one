@@ -86,9 +86,7 @@ const contrastColor = ((color: Color) => {
 
     const fakeroot = document.getElementById("popout-fakeroot")!;
 
-    const cards = document.querySelectorAll<HTMLElement>(".color-card");
-
-    cards.forEach((e) => {
+    document.querySelectorAll<HTMLElement>(".color-card").forEach((element) => {
         const defaultState = {
             stopping: false,
             lastTime: 0,
@@ -192,7 +190,7 @@ const contrastColor = ((color: Color) => {
             return handle;
         };
 
-        e.addEventListener("pointerdown", (event) => {
+        element.addEventListener("pointerdown", (event) => {
             if (event.button !== 0) return;
 
             state.set(event.pointerId, structuredClone(defaultState));
@@ -203,7 +201,7 @@ const contrastColor = ((color: Color) => {
                 curr.draggedElement === null &&
                 curr.draggingElement === null
             ) {
-                curr.draggedElement = e;
+                curr.draggedElement = element;
 
                 curr.initialPos = [
                     event.clientX + window.scrollX,
