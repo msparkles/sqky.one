@@ -1,4 +1,6 @@
 ---
+import { Font } from "astro:assets";
+
 import {
     babypink,
     cuteblue,
@@ -82,14 +84,11 @@ const title = getTitle(Astro.props.title);
 
         <meta name="generator" content={Astro.generator} />
 
-        <link rel="stylesheet" href="/reset.css" />
+        <Font cssVariable="--font-iosevka-aile" />
+        <Font cssVariable="--font-iosevka-curly-slab" />
+        <Font cssVariable="--font-iosevka-etoile" />
 
-        <link rel="stylesheet" href="/fonts/IosevkaAile/IosevkaAile.css" />
-        <link
-            rel="stylesheet"
-            href="/fonts/IosevkaCurlySlab/IosevkaCurlySlab.css"
-        />
-        <link rel="stylesheet" href="/fonts/IosevkaEtoile/IosevkaEtoile.css" />
+        <link rel="stylesheet" href="/reset.css" />
     </head>
 
     <body>
@@ -136,9 +135,9 @@ const title = getTitle(Astro.props.title);
     is:global
 >
     :root {
-        --sans: "Iosevka Aile Web", sans-serif;
-        --mono: "Iosevka Curly Slab Web", monospace;
-        --serif: "Iosevka Etoile Web", serif;
+        --sans: var(--font-iosevka-aile), sans-serif;
+        --mono: var(--font-iosevka-curly-slab), monospace;
+        --serif: var(--font-iosevka-etoile), serif;
 
         font-family: var(--sans);
 
