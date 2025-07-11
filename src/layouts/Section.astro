@@ -1,15 +1,16 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+
 import { space700, space900 } from "../colors.astro";
 
-type Props = { needsScript?: boolean } & HTMLAttributes<"section">;
+type Props = { needsJs?: boolean } & HTMLAttributes<"section">;
 
 export const sectionColors = { bgColor: space900, borderColor: space700 };
 
-const { needsScript, class: cls, ...props } = Astro.props;
+const { needsJs, class: cls, ...props } = Astro.props;
 ---
 
-<section {...props} class:list={[needsScript && "noscript", cls]}>
+<section {...props} class:list={[needsJs && "js-necessary", cls]}>
     <slot />
 </section>
 
