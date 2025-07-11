@@ -3,24 +3,10 @@ import Color from "colorjs.io";
 
 const { color, variant } = Astro.props;
 
-const list = [
-    new Color("#000"),
-    new Color("#111"),
-    new Color("#222"),
-    new Color("#333"),
-    new Color("#444"),
-    new Color("#555"),
-    new Color("#666"),
-    new Color("#777"),
-    new Color("#888"),
-    new Color("#999"),
-    new Color("#aaa"),
-    new Color("#bbb"),
-    new Color("#ccc"),
-    new Color("#ddd"),
-    new Color("#eee"),
-    new Color("#fff"),
-];
+const list: Color[] = [];
+for (let i = 0; i < 256; i++) {
+    list.push(new Color("oklab", [i / 256.0, 0, 0]));
+}
 
 const contrastColor = ((color: Color) => {
     const results = list
