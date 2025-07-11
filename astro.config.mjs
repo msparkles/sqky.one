@@ -704,6 +704,7 @@ export default defineConfig({
             },
         ],
         contentIntellisense: true,
+        preserveScriptOrder: true,
     },
     vite: {
         css: {
