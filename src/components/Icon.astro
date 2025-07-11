@@ -1,0 +1,23 @@
+---
+import Picture, { type Props as P } from "./Picture.astro";
+
+export type Props = P;
+
+const props = Astro.props;
+---
+
+<Picture
+    class="icon"
+    pictureAttributes={{ class: "icon-container" }}
+    {...props}
+    alt=""
+/>
+
+<style>
+    .icon {
+        display: inline;
+        width: auto;
+        height: 1.25em;
+        vertical-align: sub;
+    }
+</style>
