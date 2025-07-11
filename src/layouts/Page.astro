@@ -217,7 +217,7 @@ const title = getTitle(Astro.props.title);
     h6 {
         color: var(--headingColor);
 
-        margin-block: 0.25em;
+        margin-block: 0.4em;
     }
 
     h1::before,
@@ -262,7 +262,7 @@ const title = getTitle(Astro.props.title);
         width: 100%;
         height: 3px;
         background: var(--separatorColor);
-        margin-block: 2.25em;
+        margin-block: 2em;
         border-radius: 9999px;
         overflow: hidden;
     }
@@ -313,15 +313,14 @@ const title = getTitle(Astro.props.title);
 
     ol {
         list-style-type: decimal;
+        padding-left: 1.5em;
+        margin-block: 1em;
     }
 
     ul {
         list-style-type: disc;
-    }
-
-    ol,
-    ul {
         padding-left: 1em;
+        margin-block: 1em;
     }
 
     li {
