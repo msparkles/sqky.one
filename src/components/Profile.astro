@@ -1,6 +1,7 @@
 ---
 import {
     ESFlag,
+    MouseFront,
     MouseSide,
     TFHazard,
     ThetaDelta,
@@ -16,6 +17,16 @@ import Section from "../layouts/Section.astro";
 
 <Section>
     <style>
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         .hiiiii {
             width: 100%;
             overflow: clip;
@@ -25,6 +36,10 @@ import Section from "../layouts/Section.astro";
             padding-block: 1.5rem;
 
             clear: right;
+        }
+
+        .rotate {
+            animation: rotate 2s linear infinite;
         }
     </style>
 
@@ -46,7 +61,7 @@ import Section from "../layouts/Section.astro";
 
         <br />
 
-        <p>i'm a <em>mouse</em> <Icon src={MouseSide} />!!!!</p>
+        <p>i'm a <em>mouse</em> <Icon class="rotate" src={MouseFront} />!!!!</p>
         <p>
             and mice are squeaky, so i'm
             <a href="https://the.sqky.one/"><code>the.sqky.one</code></a>

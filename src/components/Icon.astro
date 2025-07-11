@@ -7,9 +7,9 @@ const props = Astro.props;
 ---
 
 <Picture
-    class="icon"
     pictureAttributes={{ class: "icon-container" }}
     {...props}
+    class:list={[props["class:list"], "icon"]}
     alt=""
 />
 
