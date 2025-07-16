@@ -1,4 +1,3 @@
----
 export const babypink100 = "#fff2f8";
 export const babypink200 = "#ffe8f8";
 export const babypink300 = "#ffdcf5";
@@ -142,4 +141,3 @@ export const semanticColors = {
     focusColor: grass500,
     focusBorderColor: space500,
 };
----

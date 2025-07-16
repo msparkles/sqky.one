@@ -6,12 +6,7 @@ export type Props = P;
 const props = Astro.props;
 ---
 
-<Picture
-    pictureAttributes={{ class: "icon-container" }}
-    {...props}
-    class:list={[props["class:list"], "icon"]}
-    alt=""
-/>
+<Picture {...props} class:list={[props["class:list"], "icon"]} alt="" />
 
 <style>
     .icon {

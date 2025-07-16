@@ -1,7 +1,6 @@
 ---
-import { colors, cuteblue400, slate100 } from "../colors.astro";
-
-import ColorCard from "../components/ColorCard.astro";
+import ColorCard from "$components/ColorCard.astro";
+import { colors, cuteblue400, slate100 } from "$lib/colors";
 
 import Section from "../layouts/Section.astro";
 ---
@@ -13,7 +12,7 @@ import Section from "../layouts/Section.astro";
 
     <p class="text-center">play around, drag them all over, they're fun :3</p>
 
-    <div class="container">
+    <div class="cards">
         {
             Object.entries(colors).map(([name, variants]) => (
                 <div class="color-section">
@@ -103,7 +102,7 @@ import Section from "../layouts/Section.astro";
         animation: rainbow 36s linear infinite;
     }
 
-    .container {
+    .cards {
         display: flex;
         position: relative;
 
@@ -114,7 +113,7 @@ import Section from "../layouts/Section.astro";
         padding: 1rem;
         margin-top: 1.5rem;
         margin-inline: auto;
-        gap: 0.5rem;
+        gap: 0.75rem;
 
         border-radius: 1.25rem;
 

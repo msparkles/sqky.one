@@ -1,11 +1,9 @@
 ---
 import { MouseSide } from "../assets/Icons.astro";
 import Pfp from "../assets/profile_picture.png";
-
-import Picture from "../components/Picture.astro";
-import Icon from "../components/Icon.astro";
-
 import { sectionColors } from "../layouts/Section.astro";
+import Icon from "./Icon.astro";
+import Picture from "./Picture.astro";
 
 const pfpDesc =
     "The mouse in Resonite, it has a pacifier in colours of the transgender flag in its mouth, it is facing the viewer and smiling with wide-open eyes.";
@@ -75,6 +73,33 @@ const pfpDesc =
         }
     }
 
+    @keyframes wobble {
+        from {
+            transform: rotate(-4deg) translateY(0) translateX(-3%);
+            animation-timing-function: ease-in;
+        }
+
+        25% {
+            transform: rotate(0) translateY(8%) translateX(0);
+            animation-timing-function: ease-out;
+        }
+
+        50% {
+            transform: rotate(4deg) translateY(0) translateX(3%);
+            animation-timing-function: ease-in;
+        }
+
+        75% {
+            transform: rotate(0) translateY(8%) translateX(0);
+            animation-timing-function: ease-out;
+        }
+
+        to {
+            transform: rotate(-4deg) translateY(0) translateX(-3%);
+            animation-timing-function: ease-in;
+        }
+    }
+
     .pfp-container {
         width: min-content;
 
@@ -107,7 +132,8 @@ const pfpDesc =
 
         margin-inline: auto;
 
-        animation: bounce 0.45s infinite ease-out alternate;
+        animation: wobble 0.45s infinite alternate
+            cubic-bezier(0.65, 0, 0.35, 1);
     }
 
     .pfp-caption {
@@ -154,7 +180,7 @@ const pfpDesc =
 
         animation-duration: 0.07s;
         animation-iteration-count: infinite;
-        animation-timing-function: ease-in;
+        animation-timing-function: ease;
         animation-direction: alternate-reverse;
     }
 
@@ -202,12 +228,7 @@ const pfpDesc =
 
     document.querySelectorAll<HTMLElement>(".pfp-image").forEach((element) => {
         element.addEventListener("keydown", (event) => {
-            if (
-                !event.ctrlKey &&
-                !event.shiftKey &&
-                !event.metaKey &&
-                event.key != "Tab"
-            ) {
+            if (!event.key.includes("Tab")) {
                 play();
                 event.preventDefault();
             }

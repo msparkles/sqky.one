@@ -9,7 +9,7 @@ import {
     semanticColors,
     slate,
     space,
-} from "../colors.astro";
+} from "$lib/colors";
 
 const siteName = "squeaky one";
 
@@ -277,6 +277,7 @@ const title = getTitle(Astro.props.title);
         display: inline;
         padding-inline: 0.15em;
         border-radius: 0.25rem;
+        color: var(--textColor);
         border: 1px solid var(--codeBorderColor);
         background-color: var(--codeBgColor);
     }
