@@ -1,0 +1,93 @@
+@keyframes earwiggleleft {
+    from {
+        transform: rotate(-45deg);
+    }
+    to {
+        transform: rotate(-70deg);
+    }
+}
+
+@keyframes earwiggleright {
+    from {
+        transform: rotate(45deg);
+    }
+    to {
+        transform: rotate(70deg);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-7.5%);
+    }
+}
+
+@keyframes wobble {
+    from {
+        transform: rotate(-4deg) translateY(0) translateX(-3%);
+        animation-timing-function: ease-in;
+    }
+
+    25% {
+        transform: rotate(0) translateY(8%) translateX(0);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: rotate(4deg) translateY(0) translateX(3%);
+        animation-timing-function: ease-in;
+    }
+
+    75% {
+        transform: rotate(0) translateY(8%) translateX(0);
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: rotate(-4deg) translateY(0) translateX(-3%);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes hearts-rotate-x {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(var(--radius));
+    }
+}
+
+@keyframes hearts-rotate-y {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(var(--radius));
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 600% 0%;
+    }
+}

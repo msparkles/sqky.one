@@ -29,26 +29,6 @@ const { src, radius, delay, length } = Astro.props;
 </div>
 
 <style>
-    @keyframes hearts-rotate-x {
-        0% {
-            transform: translateX(0px);
-        }
-
-        100% {
-            transform: translateX(var(--radius));
-        }
-    }
-
-    @keyframes hearts-rotate-y {
-        0% {
-            transform: translateY(0px);
-        }
-
-        100% {
-            transform: translateY(var(--radius));
-        }
-    }
-
     .headmate-heart-x {
         animation: hearts-rotate-x var(--length) calc(var(--delay, 0s) - 1s)
             alternate infinite cubic-bezier(0.37, 0, 0.63, 1);

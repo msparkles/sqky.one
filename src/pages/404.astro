@@ -1,9 +1,12 @@
 ---
 import Page from "$layouts/Page.astro";
 import Section from "$layouts/Section.astro";
+import Navigation from "$layouts/widgets/Navigation.astro";
 ---
 
 <Page>
+    <Navigation slot="nav" />
+
     <Section>
         <h1>404 Not Found</h1>
 

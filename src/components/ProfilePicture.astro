@@ -45,61 +45,6 @@ const pfpDesc =
         ...sectionColors,
     }}
 >
-    @keyframes earwiggleleft {
-        from {
-            transform: rotate(-45deg);
-        }
-        to {
-            transform: rotate(-70deg);
-        }
-    }
-
-    @keyframes earwiggleright {
-        from {
-            transform: rotate(45deg);
-        }
-        to {
-            transform: rotate(70deg);
-        }
-    }
-
-    @keyframes bounce {
-        from {
-            transform: translateY(0);
-        }
-
-        to {
-            transform: translateY(-7.5%);
-        }
-    }
-
-    @keyframes wobble {
-        from {
-            transform: rotate(-4deg) translateY(0) translateX(-3%);
-            animation-timing-function: ease-in;
-        }
-
-        25% {
-            transform: rotate(0) translateY(8%) translateX(0);
-            animation-timing-function: ease-out;
-        }
-
-        50% {
-            transform: rotate(4deg) translateY(0) translateX(3%);
-            animation-timing-function: ease-in;
-        }
-
-        75% {
-            transform: rotate(0) translateY(8%) translateX(0);
-            animation-timing-function: ease-out;
-        }
-
-        to {
-            transform: rotate(-4deg) translateY(0) translateX(-3%);
-            animation-timing-function: ease-in;
-        }
-    }
-
     .pfp-container {
         width: min-content;
 
@@ -200,7 +145,7 @@ const pfpDesc =
 </style>
 
 <script>
-    const url = "/squeak.ogg";
+    const url = "/assets/squeak.ogg";
 
     const context = new AudioContext({ latencyHint: "interactive" });
     const audioBuffer = await fetch(url)

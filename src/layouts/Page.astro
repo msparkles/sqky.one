@@ -88,7 +88,8 @@ const title = getTitle(Astro.props.title);
         <Font cssVariable="--font-iosevka-curly-slab" />
         <Font cssVariable="--font-iosevka-etoile" />
 
-        <link rel="stylesheet" href="/reset.css" />
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/anims.css" />
     </head>
 
     <body>
@@ -295,26 +296,18 @@ const title = getTitle(Astro.props.title);
         margin-block: 0.5em;
     }
 
-    code {
-        font-size: 0.875em;
-        display: inline;
-        padding-inline: 0.15em;
-        border-radius: 0.25rem;
-        color: var(--textColor);
-        border: 1px solid var(--codeBorderColor);
-        background-color: var(--codeBgColor);
-    }
-
     mark {
         font-size: 1.45em;
     }
 
-    code {
-        font-family: var(--mono);
-    }
-
     a {
         color: var(--linkColor);
+    }
+
+    a:focus,
+    a:hover {
+        color: var(--focusColor);
+        text-decoration: underline;
     }
 
     b,
@@ -356,6 +349,17 @@ const title = getTitle(Astro.props.title);
         color: var(--smallColor);
     }
 
+    code {
+        font-size: 0.875em;
+        display: inline;
+        padding-inline: 0.15em;
+        border-radius: 0.25rem;
+        color: var(--textColor);
+        border: 1px solid var(--codeBorderColor);
+        background-color: var(--codeBgColor);
+        font-family: var(--mono);
+    }
+
     blockquote {
         margin-block: 1.25rem;
         margin-left: 1rem;
@@ -390,12 +394,6 @@ const title = getTitle(Astro.props.title);
 
     cite::after {
         content: "";
-    }
-
-    a:focus,
-    a:hover {
-        color: var(--focusColor);
-        text-decoration: underline;
     }
 
     img:focus {

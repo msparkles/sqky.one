@@ -98,7 +98,6 @@ const size = 96;
         min-height: calc(var(--s) * 2);
         height: auto;
 
-        padding: 2rem;
         margin-inline: auto;
 
         flex: none;
@@ -119,19 +118,23 @@ const size = 96;
         display: block;
 
         position: absolute;
-
-        outline: 2px solid #0006;
     }
 </style>
 
 <style define:vars={{ size: `${size}px` }}>
     .transcube {
         --s: var(--size);
+        padding: 3.5rem;
+    }
+
+    .face {
+        outline: 2px solid #0006;
     }
 
     @media (max-width: 1200px) {
         .transcube {
             --s: calc(var(--size) / 1.5);
+            padding: 2.75rem;
         }
 
         .face {
