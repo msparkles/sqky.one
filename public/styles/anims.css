@@ -27,7 +27,7 @@
 }
 
 @keyframes wobble {
-    from {
+    0% {
         transform: rotate(-4deg) translateY(0) translateX(-3%);
         animation-timing-function: ease-in;
     }
@@ -47,38 +47,26 @@
         animation-timing-function: ease-out;
     }
 
-    to {
+    100% {
         transform: rotate(-4deg) translateY(0) translateX(-3%);
         animation-timing-function: ease-in;
     }
 }
 
 @keyframes hearts-rotate-x {
-    0% {
-        transform: translateX(0px);
-    }
-
-    100% {
+    to {
         transform: translateX(var(--radius));
     }
 }
 
 @keyframes hearts-rotate-y {
-    0% {
-        transform: translateY(0px);
-    }
-
-    100% {
+    to {
         transform: translateY(var(--radius));
     }
 }
 
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }

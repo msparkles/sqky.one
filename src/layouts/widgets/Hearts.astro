@@ -1,12 +1,5 @@
 ---
-import {
-    BrownHeart,
-    OrangeHeart,
-    PinkHeart,
-    PurpleHeart,
-    WhiteHeart,
-    YellowHeart,
-} from "$assets/IconsSvg.astro";
+import { BrownHeart, OrangeHeart, PinkHeart, PurpleHeart, WhiteHeart, YellowHeart } from "$assets/IconsSvg.astro";
 import HeartIcon from "$components/HeartIcon.astro";
 import SvgIcon from "$components/SvgIcon.astro";
 
@@ -17,35 +10,29 @@ const radius = 80;
 
 <div class="hearts" data-radius={radius}>
     <div class="system-heart-container">
-        <SvgIcon
-            class="system-heart"
-            width={radius}
-            height={radius}
-            src={PurpleHeart}
-        />
+        <SvgIcon class="system-heart" width={radius} height={radius} src={PurpleHeart} />
     </div>
 
     <div class="headmate-hearts">
-        {
-            hearts.map((heart, idx) => (
-                <HeartIcon
-                    src={heart}
-                    radius={radius}
-                    length={2}
-                    delay={(idx / hearts.length) * -4}
-                />
-            ))
-        }
+        {hearts.map((heart, idx) => <HeartIcon src={heart} radius={radius} length={2} delay={(idx / hearts.length) * -4} />)}
     </div>
 </div>
 
 <style define:vars={{ radius: `${radius}px` }}>
     .hearts {
+        display: block;
         position: relative;
         float: right;
         width: 192px;
         height: 192px;
-        margin: 2rem;
+        margin: 2.35rem;
+    }
+
+    @media (max-width: 640px) {
+        .hearts {
+            margin-inline: auto;
+            float: none;
+        }
     }
 
     .system-heart-container {

@@ -1,15 +1,7 @@
 ---
 import { Font } from "astro:assets";
 
-import {
-    babypink,
-    cuteblue,
-    grass,
-    lavender,
-    semanticColors,
-    slate,
-    space,
-} from "$lib/colors";
+import { babypink, cuteblue, grass, lavender, semanticColors, slate, space } from "$lib/colors";
 
 const siteName = "squeaky one";
 
@@ -36,48 +28,20 @@ const title = getTitle(Astro.props.title);
         <meta name="theme-color" content="#ffc2fe" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon_16.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon_32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="48x48"
-            href="/favicon_48.png"
-        />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon_48.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="/favicon_152.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_180.png" />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/favicon_192.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="512x512"
-            href="/favicon_512.png"
-        />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon_192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon_512.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
         <title>{title}</title>
         <meta name="description" content={description} />
 
         <meta property="og:title" content={title} />
-        <meta
-            property="og:image"
-            content="https://sqky.one/assets/thumbnail.png"
-        />
+        <meta property="og:image" content="https://sqky.one/assets/thumbnail.png" />
         <meta property="og:url" content="https://sqky.one" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content={description} />

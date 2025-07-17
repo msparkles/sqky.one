@@ -10,13 +10,7 @@ for (let i = 0; i < 256; i++) {
 
 const contrastColor = ((color: Color) => {
     const results = list
-        .map(
-            (candidate) =>
-                [color.contrast(candidate, "DeltaPhi"), candidate] as [
-                    number,
-                    Color,
-                ],
-        )
+        .map((candidate) => [color.contrast(candidate, "DeltaPhi"), candidate] as [number, Color])
         .sort(([a], [b]) => b - a)
         .map(([, v]) => v);
 
@@ -121,24 +115,8 @@ const contrastColor = ((color: Color) => {
                     const stiffness = 90;
                     const damping = 8;
 
-                    const x = springStep(
-                        curr.currentPos[0],
-                        curr.currentVel[0],
-                        curr.cursorPos[0],
-                        mass,
-                        stiffness,
-                        damping,
-                        dT,
-                    );
-                    const y = springStep(
-                        curr.currentPos[1],
-                        curr.currentVel[1],
-                        curr.cursorPos[1],
-                        mass,
-                        stiffness,
-                        damping,
-                        dT,
-                    );
+                    const x = springStep(curr.currentPos[0], curr.currentVel[0], curr.cursorPos[0], mass, stiffness, damping, dT);
+                    const y = springStep(curr.currentPos[1], curr.currentVel[1], curr.cursorPos[1], mass, stiffness, damping, dT);
 
                     curr.currentPos[0] = x.pos;
                     curr.currentPos[1] = y.pos;
@@ -148,16 +126,9 @@ const contrastColor = ((color: Color) => {
                     let rotate = "0deg";
                     let scale = "1";
                     if (curr.lastVel !== null) {
-                        const deltaVel = [
-                            curr.currentVel[0] - curr.lastVel[0],
-                            curr.currentVel[1] - curr.lastVel[1],
-                        ];
+                        const deltaVel = [curr.currentVel[0] - curr.lastVel[0], curr.currentVel[1] - curr.lastVel[1]];
 
-                        scale = `${
-                            Math.sqrt(Math.abs(deltaVel[0] + deltaVel[1])) /
-                                60.0 +
-                            1.0
-                        }`;
+                        scale = `${Math.sqrt(Math.abs(deltaVel[0] + deltaVel[1])) / 60.0 + 1.0}`;
                         rotate = `${Math.max(Math.min(360.0, deltaVel[0] / 8.0), -360.0)}deg`;
                     }
                     curr.lastVel = [...curr.currentVel];
@@ -200,17 +171,10 @@ const contrastColor = ((color: Color) => {
             state.set(event.pointerId, structuredClone(defaultState));
             const curr = state.get(event.pointerId);
 
-            if (
-                curr &&
-                curr.draggedElement === null &&
-                curr.draggingElement === null
-            ) {
+            if (curr && curr.draggedElement === null && curr.draggingElement === null) {
                 curr.draggedElement = element;
 
-                curr.initialPos = [
-                    event.clientX + window.scrollX,
-                    event.clientY + window.scrollY,
-                ];
+                curr.initialPos = [event.clientX + window.scrollX, event.clientY + window.scrollY];
                 curr.currentPos = [...curr.initialPos];
                 curr.currentVel = [0, 0];
 
@@ -221,9 +185,7 @@ const contrastColor = ((color: Color) => {
                 {
                     const rect = curr.draggedElement.getBoundingClientRect();
 
-                    const e = curr.draggedElement.cloneNode(
-                        true,
-                    ) as HTMLElement;
+                    const e = curr.draggedElement.cloneNode(true) as HTMLElement;
                     e.style.position = "absolute";
                     e.style.left = `${rect.x + window.scrollX}px`;
                     e.style.top = `${rect.y + window.scrollY}px`;
@@ -249,11 +211,7 @@ const contrastColor = ((color: Color) => {
             const curr = state.get(event.pointerId);
 
             if (curr) {
-                if (
-                    !curr.stopping &&
-                    curr.draggedElement &&
-                    curr.draggingElement
-                ) {
+                if (!curr.stopping && curr.draggedElement && curr.draggingElement) {
                     curr.stopping = true;
                     curr.cursorPos = curr.initialPos;
                 }
@@ -271,20 +229,14 @@ const contrastColor = ((color: Color) => {
 
             if (curr && !curr.stopping) {
                 curr.cursorPosViewport = [event.clientX, event.clientY];
-                curr.cursorPos = [
-                    curr.cursorPosViewport[0] + window.scrollX,
-                    curr.cursorPosViewport[1] + window.scrollY,
-                ];
+                curr.cursorPos = [curr.cursorPosViewport[0] + window.scrollX, curr.cursorPosViewport[1] + window.scrollY];
             }
         });
 
         document.addEventListener("scroll", () => {
             state.forEach((curr) => {
                 if (!curr.stopping && curr.cursorPosViewport !== null) {
-                    curr.cursorPos = [
-                        curr.cursorPosViewport[0] + window.scrollX,
-                        curr.cursorPosViewport[1] + window.scrollY,
-                    ];
+                    curr.cursorPos = [curr.cursorPosViewport[0] + window.scrollX, curr.cursorPosViewport[1] + window.scrollY];
                 }
             });
         });

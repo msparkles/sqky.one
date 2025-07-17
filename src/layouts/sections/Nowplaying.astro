@@ -15,16 +15,12 @@ import nowplaying from "$assets/nowplaying.html";
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const nowplayingWidget = document.getElementById("nowplaying-widget")!;
-        const nowplayingWidgetLoader = document.getElementById(
-            "nowplaying-widget-loader",
-        )!;
+        const nowplayingWidgetLoader = document.getElementById("nowplaying-widget-loader")!;
 
         nowplayingWidget.attachShadow({ mode: "open" });
 
         if (nowplayingWidget.shadowRoot) {
-            nowplayingWidget.shadowRoot.replaceChildren(
-                ...nowplayingWidgetLoader.childNodes,
-            );
+            nowplayingWidget.shadowRoot.replaceChildren(...nowplayingWidgetLoader.childNodes);
 
             nowplayingWidgetLoader.remove();
         }

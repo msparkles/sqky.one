@@ -15,15 +15,7 @@ const pfpDesc =
             <div aria-hidden="true" class="ear-left"></div>
             <div aria-hidden="true" class="ear-right"></div>
 
-            <Picture
-                tabindex="0"
-                role="button"
-                src={Pfp}
-                class="pfp-image"
-                alt={pfpDesc}
-                title={pfpDesc}
-                draggable="false"
-            />
+            <Picture tabindex="0" role="button" src={Pfp} class="pfp-image" alt={pfpDesc} title={pfpDesc} draggable="false" />
         </div>
     </div>
 
@@ -32,10 +24,7 @@ const pfpDesc =
         <p class="js-necessary"><small>(try patting it :3)</small></p>
         <p>picture taken on <a href="https://resonite.com/">Resonite</a></p>
         <p>
-            <small>
-                (better picture incoming, i've been ADHDing about this for
-                months)
-            </small>
+            <small> (better picture incoming, i've been ADHDing about this for months) </small>
         </p>
     </figcaption>
 </figure>
@@ -77,8 +66,7 @@ const pfpDesc =
 
         margin-inline: auto;
 
-        animation: wobble 0.45s infinite alternate
-            cubic-bezier(0.65, 0, 0.35, 1);
+        animation: wobble 0.45s infinite alternate cubic-bezier(0.65, 0, 0.35, 1);
     }
 
     .pfp-caption {
@@ -163,23 +151,15 @@ const pfpDesc =
         source.start();
     };
 
-    document
-        .querySelectorAll<HTMLElement>(".pfp-image, .ear-left, .ear-right")
-        .forEach((element) => {
-            element.style.cursor = "pointer";
+    document.querySelectorAll<HTMLElement>(".pfp-image, .ear-left, .ear-right").forEach((element) => {
+        element.style.cursor = "pointer";
 
-            element.addEventListener("click", play);
-        });
+        element.addEventListener("click", play);
+    });
 
     document.querySelectorAll<HTMLElement>(".pfp-image").forEach((element) => {
         element.addEventListener("keydown", (event) => {
-            if (
-                !event.ctrlKey &&
-                !event.shiftKey &&
-                !event.altKey &&
-                !event.metaKey &&
-                !event.key.includes("Tab")
-            ) {
+            if (!event.ctrlKey && !event.shiftKey && !event.altKey && !event.metaKey && !event.key.includes("Tab")) {
                 play();
                 event.preventDefault();
             }

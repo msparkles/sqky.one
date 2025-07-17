@@ -1,12 +1,4 @@
-export function springStep(
-    pos: number,
-    velocity: number,
-    target: number,
-    mass: number,
-    stiffness: number,
-    damping: number,
-    dT: number,
-) {
+export function springStep(pos: number, velocity: number, target: number, mass: number, stiffness: number, damping: number, dT: number) {
     const F_spring = -stiffness * (pos - target);
 
     const F_damp = -damping * velocity;

@@ -17,19 +17,13 @@
                 };
 
                 ws.onerror = (e) => {
-                    console.log(
-                        "Socket errored. Reconnect will be attempted in 1 second. Reason:",
-                        e.reason,
-                    );
+                    console.log("Socket errored. Reconnect will be attempted in 1 second. Reason:", e.reason);
 
                     wrapper.reset();
                 };
 
                 ws.onclose = (e) => {
-                    console.log(
-                        "Socket closed. Reconnect will be attempted in 1 second. Reason:",
-                        e.reason,
-                    );
+                    console.log("Socket closed. Reconnect will be attempted in 1 second. Reason:", e.reason);
 
                     wrapper.reset();
                 };
@@ -173,9 +167,7 @@
                 }
 
                 if (artElement) {
-                    if (
-                        artElement.style.backgroundImage !== currentImageUrlCss
-                    ) {
+                    if (artElement.style.backgroundImage !== currentImageUrlCss) {
                         artElement.style.backgroundImage = currentImageUrlCss;
                     }
                 }
@@ -190,8 +182,7 @@
                             let pos = "0.0%";
 
                             if (position !== undefined) {
-                                const posPercentage =
-                                    (position / length) * 100.0;
+                                const posPercentage = (position / length) * 100.0;
 
                                 pos = `${posPercentage}%`;
                             }
@@ -205,22 +196,10 @@
                             let progressText = "";
 
                             if (position !== undefined) {
-                                const posSeconds = (
-                                    Math.round(position / 1_000_000) % 60
-                                )
-                                    .toString()
-                                    .padStart(2, "0");
-                                const posMinutes = Math.floor(
-                                    position / 1_000_000 / 60,
-                                );
-                                const lenSeconds = (
-                                    Math.round(length / 1_000_000) % 60
-                                )
-                                    .toString()
-                                    .padStart(2, "0");
-                                const lenMinutes = Math.floor(
-                                    length / 1_000_000 / 60,
-                                );
+                                const posSeconds = (Math.round(position / 1_000_000) % 60).toString().padStart(2, "0");
+                                const posMinutes = Math.floor(position / 1_000_000 / 60);
+                                const lenSeconds = (Math.round(length / 1_000_000) % 60).toString().padStart(2, "0");
+                                const lenMinutes = Math.floor(length / 1_000_000 / 60);
 
                                 let paused_text = "";
                                 if (paused) {
