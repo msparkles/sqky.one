@@ -2,9 +2,11 @@ export const babypink100 = "#fff2f8";
 export const babypink200 = "#ffe8f8";
 export const babypink300 = "#ffdcf5";
 export const babypink400 = "#ffc0ed";
-export const babypink500 = "#ffa0e6";
-export const babypink600 = "#df70c5";
-export const babypink700 = "#a54993";
+export const babypink500 = "#ffa6e7ff";
+export const babypink600 = "#d373bdff";
+export const babypink700 = "#a8669bff";
+export const babypink800 = "#6d3c63ff";
+export const babypink900 = "#3f2039ff";
 export const babypink = {
     babypink100,
     babypink200,
@@ -13,15 +15,19 @@ export const babypink = {
     babypink500,
     babypink600,
     babypink700,
+    babypink800,
+    babypink900,
 };
 
 export const cuteblue100 = "#f0f8fd";
 export const cuteblue200 = "#ebf7ff";
 export const cuteblue300 = "#cbe8ff";
 export const cuteblue400 = "#a5d8fa";
-export const cuteblue500 = "#629ec7";
-export const cuteblue600 = "#38668b";
-export const cuteblue700 = "#28465c";
+export const cuteblue500 = "#6fb2dfff";
+export const cuteblue600 = "#557b9bff";
+export const cuteblue700 = "#2a4e68ff";
+export const cuteblue800 = "#183950ff";
+export const cuteblue900 = "#173042ff";
 export const cuteblue = {
     cuteblue100,
     cuteblue200,
@@ -30,6 +36,8 @@ export const cuteblue = {
     cuteblue500,
     cuteblue600,
     cuteblue700,
+    cuteblue800,
+    cuteblue900,
 };
 
 export const lavender100 = "#f7f0ff";
