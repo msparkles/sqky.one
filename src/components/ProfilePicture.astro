@@ -228,7 +228,13 @@ const pfpDesc =
 
     document.querySelectorAll<HTMLElement>(".pfp-image").forEach((element) => {
         element.addEventListener("keydown", (event) => {
-            if (!event.key.includes("Tab")) {
+            if (
+                !event.ctrlKey &&
+                !event.shiftKey &&
+                !event.altKey &&
+                !event.metaKey &&
+                !event.key.includes("Tab")
+            ) {
                 play();
                 event.preventDefault();
             }
