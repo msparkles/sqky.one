@@ -3,14 +3,14 @@ import type { HTMLAttributes } from "astro/types";
 
 import { space700, space900 } from "$lib/colors";
 
-type Props = { needsJs?: boolean } & HTMLAttributes<"section">;
+type Props = HTMLAttributes<"section">;
 
 export const sectionColors = { bgColor: space900, borderColor: space700 };
 
-const { needsJs, class: cls, ...props } = Astro.props;
+const { ...props } = Astro.props;
 ---
 
-<section {...props} class:list={[needsJs && "js-necessary", cls]}>
+<section {...props}>
     <slot />
 </section>
 

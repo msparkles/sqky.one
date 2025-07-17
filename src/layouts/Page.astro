@@ -92,19 +92,25 @@ const title = getTitle(Astro.props.title);
     </head>
 
     <body>
-        <main>
-            <slot />
-        </main>
+        <div class="site">
+            <main>
+                <slot />
+            </main>
+
+            <slot name="nav" />
+        </div>
 
         <div id="popout-fakeroot"></div>
 
         <noscript>
             <style>
-                .js-interactive {
+                .js-interactive,
+                .js-inherit:has(.js-interactive) {
                     cursor: unset;
                 }
 
-                .js-necessary {
+                .js-necessary,
+                .js-inherit:has(.js-necessary) {
                     display: none;
                 }
             </style>
@@ -113,16 +119,58 @@ const title = getTitle(Astro.props.title);
 </html>
 
 <style>
-    main {
+    .site {
+        width: 100%;
+
         display: flex;
-        flex-direction: column;
+        flex-direction: row-reverse;
         flex-wrap: nowrap;
 
         padding-inline: calc(max(14vw - 800px * 0.1, 0px));
         padding-inline: calc(160 * max(100vw - 800px, 0px) / 800);
 
-        padding-block: 1.5rem;
+        margin-block: 1.5rem;
+    }
+
+    @media (max-width: 1200px) {
+        .site {
+            flex-direction: column-reverse;
+        }
+    }
+
+    main {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
         gap: 2rem;
+    }
+
+    #popout-fakeroot {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        padding: 0;
+        margin: 0;
+
+        overflow: hidden;
+        user-select: none;
+        touch-action: none;
+        pointer-events: none;
+
+        text-rendering: optimizeLegibility;
+    }
+
+    #popout-fakeroot * {
+        pointer-events: auto;
+
+        text-rendering: optimizeLegibility;
     }
 </style>
 
@@ -155,6 +203,10 @@ const title = getTitle(Astro.props.title);
         min-height: 100%;
     }
 
+    body {
+        position: relative;
+    }
+
     .sans {
         font-family: var(--sans);
     }
@@ -165,35 +217,6 @@ const title = getTitle(Astro.props.title);
 
     .mono {
         font-family: var(--mono);
-    }
-
-    body {
-        position: relative;
-    }
-
-    #popout-fakeroot {
-        width: 100%;
-        height: 100%;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        padding: 0;
-        margin: 0;
-
-        overflow: hidden;
-        user-select: none;
-        touch-action: none;
-        pointer-events: none;
-
-        text-rendering: optimizeLegibility;
-    }
-
-    #popout-fakeroot * {
-        pointer-events: auto;
-
-        text-rendering: optimizeLegibility;
     }
 
     .text-center {

@@ -1,15 +1,31 @@
 ---
-import ColorCards from "$layouts/ColorCards.astro";
-import Nowplaying from "$layouts/Nowplaying.astro";
 import Page from "$layouts/Page.astro";
-import Profile from "$layouts/Profile.astro";
+import Section from "$layouts/Section.astro";
+import AboutMe from "$layouts/sections/AboutMe.astro";
+import ColorCards from "$layouts/sections/ColorCards.astro";
+import Nowplaying from "$layouts/sections/Nowplaying.astro";
+import Navigation from "$layouts/widgets/Navigation.astro";
 ---
 
 <Page>
-    <Profile />
+    <Navigation slot="nav" />
+
+    <Section>
+        <AboutMe />
+    </Section>
+
     <div class="group">
-        <ColorCards />
-        <Nowplaying />
+        <div class="fit js-inherit">
+            <Section>
+                <ColorCards />
+            </Section>
+        </div>
+
+        <div class="fit js-inherit">
+            <Section>
+                <Nowplaying />
+            </Section>
+        </div>
     </div>
 </Page>
 
@@ -20,12 +36,12 @@ import Profile from "$layouts/Profile.astro";
         flex-direction: row;
         flex-wrap: wrap-reverse;
         justify-content: stretch;
-        align-items: first baseline;
+        align-items: stretch;
 
         gap: 2rem;
     }
 
-    .group > :global(*) {
+    .group > .fit {
         flex: min-content;
         width: fit-content;
     }

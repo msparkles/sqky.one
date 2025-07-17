@@ -40,6 +40,14 @@ const radius = 80;
 </div>
 
 <style define:vars={{ radius: `${radius}px` }}>
+    .hearts {
+        position: relative;
+        float: right;
+        width: 192px;
+        height: 192px;
+        margin: 2rem;
+    }
+
     .system-heart-container {
         position: absolute;
         display: flex;
@@ -54,12 +62,5 @@ const radius = 80;
     .system-heart {
         width: var(--radius);
         height: var(--radius);
-    }
-
-    .hearts {
-        position: relative;
-        float: right;
-        width: 192px;
-        height: 192px;
     }
 </style>

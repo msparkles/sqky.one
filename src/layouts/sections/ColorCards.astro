@@ -1,11 +1,9 @@
 ---
 import ColorCard from "$components/ColorCard.astro";
 import { colors, cuteblue400, slate100 } from "$lib/colors";
-
-import Section from "../layouts/Section.astro";
 ---
 
-<Section aria-hidden="true">
+<div aria-hidden="true">
     <p class="color-title mono">
         <span class="colors-text">c o l o u r s</span>
     </p>
@@ -25,7 +23,7 @@ import Section from "../layouts/Section.astro";
             ))
         }
     </div>
-</Section>
+</div>
 
 <style
     define:vars={{

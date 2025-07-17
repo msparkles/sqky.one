@@ -1,22 +1,16 @@
 ---
 import nowplaying from "$assets/nowplaying.html";
-
-import Section from "../layouts/Section.astro";
 ---
 
-<Section needsJs>
-    <div class="nowplaying">
-        <p>what the mouse listening to !?</p>
-        <p>
-            <small>
-                (it shows whatever i'm listening to on my computer!!!)
-            </small>
-        </p>
+<div class="nowplaying js-necessary">
+    <p>what the mouse listening to !?</p>
+    <p>
+        <small> (it shows whatever i'm listening to on my computer!!!) </small>
+    </p>
 
-        <div id="nowplaying-widget"></div>
-        <div id="nowplaying-widget-loader" hidden set:html={nowplaying({})} />
-    </div>
-</Section>
+    <div id="nowplaying-widget"></div>
+    <div id="nowplaying-widget-loader" hidden set:html={nowplaying({})} />
+</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {

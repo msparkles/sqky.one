@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+
+import transflag from "./transflag.png";
+
+const size = 96;
+---
+
+<div class="transcube">
+    <div
+        class="anim"
+        style="animation: 4s linear infinite rotate; transform: rotate3d(1, 0, 0, 45deg);"
+    >
+        <div
+            class="anim"
+            style="animation: 6s linear infinite rotate; transform: rotate3d(0, 1, 0, 90deg);"
+        >
+            <div
+                class="anim"
+                style="animation: 8s linear infinite rotate; transform: rotate3d(0, 0, 1, 135deg);"
+            >
+                <Image
+                    alt=""
+                    src={transflag}
+                    width={size}
+                    height={size}
+                    loading="eager"
+                    class="face"
+                    draggable="false"
+                    style=`transform: translateZ(calc(var(--s) / 2));`
+                />
+
+                <Image
+                    alt=""
+                    src={transflag}
+                    width={size}
+                    height={size}
+                    class="face"
+                    draggable="false"
+                    style=`transform: rotateY(180deg) translateZ(calc(var(--s) / 2));`
+                />
+
+                <Image
+                    alt=""
+                    src={transflag}
+                    width={size}
+                    height={size}
+                    loading="eager"
+                    class="face"
+                    draggable="false"
+                    style=`transform: rotateY(-90deg) translateZ(calc(var(--s) / 2));`
+                />
+
+                <Image
+                    alt=""
+                    src={transflag}
+                    width={size}
+                    height={size}
+                    loading="eager"
+                    class="face"
+                    draggable="false"
+                    style=`transform: rotateY(90deg) translateZ(calc(var(--s) / 2));`
+                />
+
+                <Image
+                    alt=""
+                    src={transflag}
+                    width={size}
+                    height={size}
+                    loading="eager"
+                    class="face"
+                    draggable="false"
+                    style=`transform: rotateX(90deg) translateZ(calc(var(--s) / 2));`
+                />
+
+                <Image
+                    alt=""
+                    src={transflag}
+                    width={size}
+                    height={size}
+                    loading="eager"
+                    class="face"
+                    draggable="false"
+                    style=`transform: rotateX(-90deg) translateZ(calc(var(--s) / 2));`
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .transcube {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: calc(var(--s) * 2);
+        min-height: calc(var(--s) * 2);
+        height: auto;
+
+        padding: 2rem;
+        margin-inline: auto;
+
+        flex: none;
+
+        user-select: none;
+    }
+
+    .anim {
+        width: var(--s);
+        height: var(--s);
+
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        animation-composition: add;
+    }
+
+    .face {
+        display: block;
+
+        position: absolute;
+
+        outline: 2px solid #0006;
+    }
+</style>
+
+<style define:vars={{ size: `${size}px` }}>
+    .transcube {
+        --s: var(--size);
+    }
+
+    @media (max-width: 1200px) {
+        .transcube {
+            --s: calc(var(--size) / 1.5);
+        }
+
+        .face {
+            outline-width: 1px;
+        }
+    }
+</style>
