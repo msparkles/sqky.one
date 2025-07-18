@@ -96,6 +96,12 @@ const size = 96;
         user-select: none;
     }
 
+    @media (prefers-reduced-motion) {
+        .transcube {
+            display: none;
+        }
+    }
+
     .anim {
         width: var(--s);
         height: var(--s);

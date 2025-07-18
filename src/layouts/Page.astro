@@ -1,6 +1,10 @@
 ---
+import "$assets/reset.css";
+import "$assets/anims.css";
+
 import { Font } from "astro:assets";
 
+import Noscript from "$assets/noscript.html";
 import { babypink, cuteblue, grass, lavender, semanticColors, slate, space } from "$lib/colors";
 
 const siteName = "squeaky one";
@@ -51,9 +55,6 @@ const title = getTitle(Astro.props.title);
         <Font cssVariable="--font-iosevka-aile" />
         <Font cssVariable="--font-iosevka-curly-slab" />
         <Font cssVariable="--font-iosevka-etoile" />
-
-        <link rel="stylesheet" href="/styles/reset.css" />
-        <link rel="stylesheet" href="/styles/anims.css" />
     </head>
 
     <body>
@@ -67,19 +68,7 @@ const title = getTitle(Astro.props.title);
 
         <div id="popout-fakeroot"></div>
 
-        <noscript>
-            <style>
-                .js-interactive,
-                .js-inherit:has(.js-interactive) {
-                    cursor: unset;
-                }
-
-                .js-necessary,
-                .js-inherit:has(.js-necessary) {
-                    display: none;
-                }
-            </style>
-        </noscript>
+        <Fragment set:html={Noscript({})} />
     </body>
 </html>
 
@@ -93,8 +82,6 @@ const title = getTitle(Astro.props.title);
 
         padding-inline: calc(max(14dvw - 800px * 0.1, 0px));
         padding-inline: calc(160 * max(100dvw - 800px, 0px) / 800);
-
-        padding-block: 1.5rem;
     }
 
     @media (max-width: 1200px) {
@@ -105,6 +92,8 @@ const title = getTitle(Astro.props.title);
 
     main {
         width: 100%;
+
+        padding-block: 1.5rem;
 
         display: flex;
         flex-direction: column;

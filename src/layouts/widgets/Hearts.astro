@@ -6,6 +6,7 @@ import SvgIcon from "$components/SvgIcon.astro";
 const hearts = [PinkHeart, BrownHeart, WhiteHeart, YellowHeart, OrangeHeart];
 
 const radius = 80;
+const length = 4;
 ---
 
 <div class="hearts" data-radius={radius}>
@@ -14,7 +15,7 @@ const radius = 80;
     </div>
 
     <div class="headmate-hearts">
-        {hearts.map((heart, idx) => <HeartIcon src={heart} radius={radius} length={2} delay={(idx / hearts.length) * -4} />)}
+        {hearts.map((heart, idx) => <HeartIcon src={heart} radius={radius} length={length} delay={(idx / hearts.length) * -2 * length} />)}
     </div>
 </div>
 

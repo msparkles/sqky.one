@@ -69,6 +69,12 @@ const pfpDesc =
         animation: wobble 0.45s infinite alternate cubic-bezier(0.65, 0, 0.35, 1);
     }
 
+    @media (prefers-reduced-motion) {
+        .pfp-image-container {
+            animation: none;
+        }
+    }
+
     .pfp-caption {
         display: block;
         width: fit-content;
@@ -129,6 +135,13 @@ const pfpDesc =
         top: var(--distance-y);
 
         animation-name: earwiggleright;
+    }
+
+    @media (prefers-reduced-motion) {
+        .ear-left,
+        .ear-right {
+            display: none;
+        }
     }
 </style>
 

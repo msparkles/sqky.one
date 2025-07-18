@@ -18,6 +18,12 @@ import Hearts from "$layouts/widgets/Hearts.astro";
     .rotate {
         animation: rotate 2s linear infinite;
     }
+
+    @media (prefers-reduced-motion) {
+        .rotate {
+            animation: none;
+        }
+    }
 </style>
 
 <p><strong>hiiiiiiiiiiiiiiiiiiiiii</strong></p>
@@ -219,5 +225,7 @@ import Hearts from "$layouts/widgets/Hearts.astro";
         <cite>anonymous deer</cite>
         <blockquote>evil therapist</blockquote>
         <cite>anonymous puppy</cite>
+        <blockquote>technological creature, yet not made of steel…</blockquote>
+        <cite>anonymous kitty</cite>
     </div>
 </div>
